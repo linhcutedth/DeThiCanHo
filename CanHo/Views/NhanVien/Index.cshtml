@@ -1,0 +1,21 @@
+﻿@model IEnumerable<CanHo.Models.NhanVienModel>
+@{
+    ViewData["NhanVien"] = "Index";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@* form ten nhan vien *@
+
+<form action="/NhanVien/ListTB">
+    <label for="tenNV">Tên nhân viên: </label>
+    <select name="id" id="id">
+        @foreach (var item in Model)
+        {
+            <option value="@item.MaNV" >@item.TenNV</option>
+            
+        }
+    </select>
+    <br><br>
+    <input type="submit" value="liệt kê">
+</form>
+

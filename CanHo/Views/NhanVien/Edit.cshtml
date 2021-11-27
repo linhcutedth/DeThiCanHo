@@ -1,0 +1,30 @@
+﻿@model CanHo.Models.NV_BT
+
+@{
+    ViewData["Title"] = "Edit";
+    var nv = ViewData["NV_BT"] as NV_BT;
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Edit", "NhanVien", new { style = "border:1px solid red; " }))
+    {
+        <div style="display: none">
+        <label for="maNV">mã nhân viên: </label>
+        <input type="text" id="maNV" name="maNV" value="@nv.MaNV" />
+        </div>
+        <br>
+        <label for="maTB">mã thiết bị: </label>
+        <input type="text" id="maTB" name="maTB" value="@nv.MaTB" disabled="disabled" />
+        <br>
+        <label for="maCH">mã căn hộ: </label>
+        <input type="text" id="maCH" name="maCH" value="@nv.MaCH" disabled="disabled"/>
+        <br>
+        <label for="lanThu">lần thứ: </label>
+        <input type="text" id="lanThu" name="lanThu" value="@nv.LanThu" disabled="disabled"/>
+        <br>
+        <label for="ngBT">Ngày bảo trì: </label>
+        <input type="text" id="ngBT" name="ngBT" value="@nv.NgBT" />
+        <br>
+        <input type="submit" value="Cập nhật">
+}

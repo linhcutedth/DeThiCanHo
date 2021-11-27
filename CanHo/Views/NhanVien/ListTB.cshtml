@@ -1,0 +1,55 @@
+﻿@model IEnumerable<CanHo.Models.NV_BT>
+@{
+    ViewData["NV_TB"] = "ListTB";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@* danh sach *@
+
+<table class="table">
+    <thead>
+        <tr style="text-align: center;">
+            <th>
+                Mã thiết bị
+            </th>
+            <th>
+                Mã căn hộ
+            </th>
+            <th>
+                Lần thứ
+            </th>
+            <th>
+                Ngày bảo trì
+            </th>
+            <th>
+                Chức năng
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.MaTB
+            </td>
+            <td>
+                @item.MaCH
+            </td>
+            <td>
+                @item.LanThu
+            </td>
+            <td>
+                @item.NgBT
+            </td>
+            <td>
+                <a href="/NhanVien/Edit?id=@item.MaNV&id1=@item.MaTB&id2=@item.MaCH&id3=@item.LanThu">View</a> |
+                <a href="/NhanVien/Delete?id=@item.MaNV&id1=@item.MaTB&id2=@item.MaCH&id3=@item.LanThu">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+

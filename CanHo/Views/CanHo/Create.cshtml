@@ -1,0 +1,12 @@
+﻿@model CanHo.Models.CanHoModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Thêm Căn hộ</h2>
+<form action="/CanHo/Create" method="post">
+    <label for="maCH">Mã căn hộ</label> <input type="text" name="MaCH" id="maCH" /><br>
+    <label for="tenCH">Tên căn hộ</label> <input type="text" name="TenCH" id="tenCH" /><br>
+    <input type="submit" name="submit" value="Thêm" />
+</form>
