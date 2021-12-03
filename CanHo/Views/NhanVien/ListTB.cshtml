@@ -41,11 +41,12 @@
                 @item.LanThu
             </td>
             <td>
-                @item.NgBT
+                @item.NgBT.ToString("dd/MM/yyyy")
             </td>
             <td>
-                <a href="/NhanVien/Edit?id=@item.MaNV&id1=@item.MaTB&id2=@item.MaCH&id3=@item.LanThu">View</a> |
-                <a href="/NhanVien/Delete?id=@item.MaNV&id1=@item.MaTB&id2=@item.MaCH&id3=@item.LanThu">Delete</a>
+                <a href="/NhanVien/Delete?id=@item.MaNV&id1=@item.MaTB&id2=@item.MaCH&id3=@item.LanThu" >Delete</a>  |
+                <a href="/NhanVien/Edit?id=@item.MaNV&id1=@item.MaTB&id2=@item.MaCH&id3=@item.LanThu">View</a> 
+
             </td>
         </tr>
         }

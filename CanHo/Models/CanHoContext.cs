@@ -154,18 +154,35 @@ namespace CanHo.Models
             return nv;
         }
 
-        public int Update(NV_BT nv)
+
+        /*
+         * 
+         * 
+         * 1,1,10000
+         * 1,2,20000
+         * 
+         * UPDATE CTBH
+         * SET MASP = 3, TIEN = 5000
+         * WHERE MANV=2 AND MASP = 3 AND TIEN=5000
+         * 
+         * -->0
+         */
+        public int Update(string matbcu, string machcu, int lanthucu,NV_BT nv)
         {
             int count = 0;
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "update nv_bt set ngbt =@ngbt where manv = @manv and matb =@matb and mach = @mach and lanthu=@lanthu";
+                string query = @"update nv_bt set matb =@matb, mach= @mach, lanthu = @lanthu, ngbt =@ngbt
+                                where manv = @manv and matb =@matbcu and mach = @machcu and lanthu=@lanthucu";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@manv", nv.MaNV); //Binding
                 cmd.Parameters.AddWithValue("@matb", nv.MaTB);
                 cmd.Parameters.AddWithValue("@mach", nv.MaCH);
                 cmd.Parameters.AddWithValue("@lanthu", nv.LanThu);
+                cmd.Parameters.AddWithValue("@matbcu", matbcu);
+                cmd.Parameters.AddWithValue("@machcu", machcu);
+                cmd.Parameters.AddWithValue("@lanthucu", lanthucu);
                 cmd.Parameters.AddWithValue("ngbt",Convert.ToDateTime(nv.NgBT));
                 cmd.ExecuteNonQuery();
                 count++;

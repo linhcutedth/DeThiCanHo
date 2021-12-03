@@ -11,17 +11,20 @@
     {
         <div style="display: none">
         <label for="maNV">mã nhân viên: </label>
-        <input type="text" id="maNV" name="maNV" value="@nv.MaNV" />
+        <input type="hidden" id="maNV" name="maNV" value="@nv.MaNV" />
+        <input type="hidden" id="matbcu" name="matbcu" value="@nv.MaTB" />
+        <input type="hidden" id="machcu" name="machcu" value="@nv.MaCH" />
+        <input type="hidden" id="lanthucu" name="lanthucu" value="@nv.LanThu" />
         </div>
         <br>
         <label for="maTB">mã thiết bị: </label>
-        <input type="text" id="maTB" name="maTB" value="@nv.MaTB" disabled="disabled" />
+        <input type="text" id="maTB" name="maTB" value="@nv.MaTB" />
         <br>
         <label for="maCH">mã căn hộ: </label>
-        <input type="text" id="maCH" name="maCH" value="@nv.MaCH" disabled="disabled"/>
+        <input type="text" id="maCH" name="maCH" value="@nv.MaCH" />
         <br>
         <label for="lanThu">lần thứ: </label>
-        <input type="text" id="lanThu" name="lanThu" value="@nv.LanThu" disabled="disabled"/>
+        <input type="text" id="lanThu" name="lanThu" value="@nv.LanThu" />
         <br>
         <label for="ngBT">Ngày bảo trì: </label>
         <input type="text" id="ngBT" name="ngBT" value="@nv.NgBT" />

@@ -31,17 +31,17 @@ namespace CanHo.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(string id, string id1, string id2, int id3, NV_BT nv)
+        public ActionResult Edit(string matbcu, string machcu, int lanthucu, NV_BT nv)
         {
 
             CanHoContext context = HttpContext.RequestServices.GetService(typeof(CanHo.Models.CanHoContext)) as CanHoContext;            
-            if (context.Update(nv) != 0)
+            if (context.Update(matbcu,machcu,lanthucu,nv) != 0)
             {
                 return Redirect("/NhanVien/ListTB?id="+nv.MaNV);
             }
             return Redirect("/NhanVien/ListTB?id=" +nv.MaNV);
         }
-
+ 
         public IActionResult Delete(string id, string id1, string id2, int id3)
         {
             CanHoContext context = HttpContext.RequestServices.GetService(typeof(CanHo.Models.CanHoContext)) as CanHoContext;
